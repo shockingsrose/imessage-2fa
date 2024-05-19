@@ -48,8 +48,8 @@ export function extractCode(original: string) {
     );
     message = message.replaceAll(phoneRegex, "");
 
-    if ((m = /(^|\s|\\R|\t|\b|G-|:)(\d{5,8})($|\s|\\R|\t|\b|\.|,)/.exec(message)) !== null) {
-      // 5-8 consecutive digits
+    if ((m = /(^|\s|\\R|\t|\b|G-|:)(\d{4,8})($|\s|\\R|\t|\b|\.|,)/.exec(message)) !== null) {
+      // 4-8 consecutive digits
       // examples:
       //   "您的验证码是 199035，10分钟内有效，请勿泄露"
       //   "登录验证码：627823，您正在尝试【登录】，10分钟内有效"
